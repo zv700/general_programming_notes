@@ -1,0 +1,6 @@
+- credit for game source code and tutorial material go to Coder Space on YouTube
+
+No fonts are included in this repo, as I do not have the right to distribute fonts that were used
+- fonts are required in .tff format and can be configured in settings.py -> LINE 11: FONT_PATH = 'assets/fonts/yourFontName.ttf'
+
+All .png art assests for the tetris blocks were made (very poorly from scratch) by me: Kauntuch, on a smartphone using the Android version of Autodesk Sketchbook.

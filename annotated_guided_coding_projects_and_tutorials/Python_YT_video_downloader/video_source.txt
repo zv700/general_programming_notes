@@ -1,0 +1,3 @@
+from: https://www.youtube.com/watch?v=vEQ8CXFWLZU
+
+"3 PYTHON AUTOMATION PROJECTS FOR BEGINNERS" by Internet Made Coder

@@ -1,0 +1,198 @@
+<h2>COMMENTING JAVASCRIPT CODE</h2>
+
+-Javascript ignores everything in a line after //
+
+// This is an in-line comment
+
+-Javascript will ignore a comment that takes up multiple lines when text is placed between "/* */"
+
+/* This is a 
+multi-line comment */
+
+-Use comments to clarify what sections of code do, purpose of code
+
+<h2>DECLARE JAVASCRIPT VARIABLES</h2>
+-in comp-sci, data=anything that is meaningful to a computer
+
+-JavaScript provides 8 different DATA TYPES
+<ul>
+<li>undefined</li>
+<li>null</li>
+<li>boolean</li>
+<li>string</li>
+<li>symbol</li>
+<li>bigint</li>
+<li>number</li>
+<li>object</li>
+</ul>
+
+conputers distinguish between NUMBERS: 12, 5, 6
+
+and
+
+STRINGS: "12", "dog", "146 cats"
+
+VARIABLES allow computers to store and manipulate data in a dynamic fashion
+
+LABEL points to the data
+
+-any of above^^^ 8 data types can be stored in a varable
+
+VARIABLES are similar to "x" or "y" variables from math: a simple name to represent data we want to refer to
+
+-COMPUTER VARIABLES are different from MATH VARIABLES because COMPUTER VARIABLES can store different values at different times
+
+-JavaScript declares a variable/creates a variable with the keyword "var" placed in front of a piece of data
+
+	var ourName;
+
+-end statements in JavaScript with semicolon ;
+
+-variable names can be made of numbers, letters, $, or _
+
+-variables CANNOT contain spaces or start with a number
+
+	var myName;
+
+-STORE A VALUE
+with ASSIGNMENT OPERATOR: =
+
+	myVariable = 5;
+	
+[^^^Number value: "5" is assigned to "myVariable"]
+
+-if there are any calculations to the right of the operator "=" those calculations are performed before the value is assigned to the variable to the left of the operator
+
+	var myVar;    <----------creates variable "myVar"
+	myVar = 5;    <----------assigns value "5" to "myVar"
+
+[^^^ When JavaScript sees "myVar" in code, it treats "myVar" as the value: "5"]
+
+	
+	var a;        <----------creates variable "a"
+	a = 7;        <----------assigns value "7" to "a"
+	
+-after assigning a number value to a variable, that variable can be assigned to another variable
+
+CORRECT:
+	var a;      <---------declares variable "a" with no value
+	a = 7;      <---assign value "7" to "a"
+	var b;      <---------declares variable "b" with no value
+	b = a;      <-----assign value
+[7--->a--->b]
+
+INCORRECT:
+	var a;
+	a = 7;
+	var b;
+	a = b;     <------will give syntaxerror, "a" is already assigned to "7", but "b" is not 							assigned a value
+[7--->a, b--->a]
+
+[order of delcaring variables matters, variable b is a new variable without a value so it needs a value, whereas variable a already has a value, YOU CANNOT HAVE MULTIPLE INSTANCES OF "a = " WITH DIFFERENT VALUES, assign each variable once]
+
+
+INITIALIZE a variable in the same line it's declared
+
+	var myVar = 0;
+	
+	var a = 9;
+	
+<h2>DECLARE A STRING VARIABLE:</h2>
+
+	var myName = "your name";
+	
+"your name" is a STRING LITERAL or a STRING
+-a STRING can be zero or more characters enclosed in singe quotes [' '] or double quotes [" "]
+	
+	var myFirstName = "Jimmy";
+	var myLastName = "Jones";
+	
+-when JavaScript variables are defined they have an initial/default value of UNDEFINED
+-if you do a mathematical operation on UNDEFINED variable you get "NaN"
+-"NaN" = "Not a Number"
+-if you concatenate a string with an UNDEFINED variable, you get a string of "undefined"
+
+	var a;
+	var b;
+	var c;
+[each of above^^^ strings have value of UNDEFINED]
+
+	var a = 5;
+	var b = 10;
+	var c = "I am a"
+[each of above have a value]
+
+	a = a + 1;
+	b = b + 5;
+	c = c + "string!";
+	
+-all JavaScript variables ARE CASE SENSITIVE
+"MYVAR" =/= "myVar"
+-can have multiple variables with same letters but different capitalization, though not recommended to maintain clarity
+
+"camelCase" - multi-word variable names where the first word is lowercase and the first letter of each subsequent word is uppercase [in camelCase, the C is the hump]
+	
+	var newGame;
+	var camelCase;
+	var keyBoard;
+	var dirtyToilet;
+	var emptyBelly;
+	var redYellowBlue;
+	var bigFatCow;
+	
+ISSUE WITH "var" keyword: variable declarations can be overwritten easily and JavaScript will not display an error, 
+-can cause issues with bigger codebases [bigger projects]
+-can be difficult to debug since JavaScript does not count overwriting "var" keywords as an error
+
+<h2>INSTEAD OF "var" USE "let" [ES6 feature]</h2>
+"var" keyword can declare a value for a specific variable MULTIPLE TIMES
+
+"let" keyword can only declare a specific variable ONCE
+"let" variables can be reassigned later
+
+====================
+DOES NOT GIVE ERROR, BUT CAUSES ISSUE LATER ON:
+
+	var camper = "James";
+	var camper = "David";
+	console.log(camper);
+<ul>
+<li>You want to assign a value to "camper", but later in code end up assigning different value to "camper" by mistake.</li>
+<li>Both of first lines assign a value to "camper"</li>
+<li>"console.log(camper);" requests the value for "camper"</li>
+<li>Value for "camper" will show as "David" because second "var" keyword OVERWRITES the first assigned value (James--->David)</li>
+</ul>
+====================
+	
+===================
+GIVES ERROR THAT CAN BE DEBUGGED (GOOD THING)
+
+	let camper = "James";
+	let camper = "David";
+	console.log(camper);
+<ul>
+<li>Assigning a value to a variable with "let" keyword only allows you to declare one value per keyword (CANNOT OVERWRITE KEYWORDS)</li>
+<li>Prevents above issue^^^^</li>
+<li>Check for errors in BROWSER CONSOLE</li>
+</ul>
+===================
+
+<h2>DECLARE VARIABLE VALUES WITH CONST</h2>
+variables declared with "const" become READ-ONLY
+
+variables declared with "const" CANNOT BE REASSIGNED
+
+	const FAV_PET = "Cats";
+	FAV_PET = "Dogs";
+[^^^above will display an error in console, cannot reassigns "FAV_PET"]
+
+-common for devs to use UPPERCASE variable identifiers for IMMUTABLE/UNCHANGABLE values 
+-devs use camelCase or lowercase for mutable values/changable (objects and arrays)
+
+	const FCC = "freeCodeCamp";
+	let fact = "is cool!";
+	fact = "is awesome!";
+	console.log(FCC, fact);
+[FCC = "freeCodeCamp" is imutable/cannot change, let fact = "is cool!" is mutable/can change]
+
+

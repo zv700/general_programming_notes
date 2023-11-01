@@ -1,0 +1,35 @@
+Original:
+- Original would take inputs for variables before showing you the madlib sentence structure
+- Only showed completed madlib after taking user input
+
+1. take user inputs for variables
+2. print completed madlib with variables filled into fstrings 
+
+
+
+My changes/improvements explained: 
+- I added a step to make the program print the mad lib sentences with blanks that correspond to words users 
+would input.
+	f"I *verb1* today and it was fun." ---> corresponds to variable: verb1 = input("Verb 1: ")
+
+- Makes more logical sense/matches original experience: 
+When you read and fill in madlibs in a physical book, you get to see the sentences before you decide what
+words to fill in the blanks with. 
+	"The dog's fur was ___(color)." ---> read madlib, write a color in the blank
+
+- added newline break "\n" between final print() of each madlib .py file so previous and next madlibs 
+wouldn't appear as one big blob of text after a madlib is finished
+
+1. print madlib with blanks/descriptions of words to input
+2. take user inputs for variables
+3. print completed madlib with variables filled into fstrings 
+
+
+
+Compromises:
+- in random_madlibs.py: after multiple attempts at changes, cannot get random.choice to actually pick a random choice from the list
+- m = random.choice([xmas, food, pool]) always runs through the list in order, tried several possible
+formatting solutions from Stack sites, couldn't get any of them to pick a random adlib from the list
+
+- INSTEAD of running random_madlibs.py --> RUN play.py to do multiple madlibs one after the other
+- play.py has random elements ommitted, instead runs through the list of madlibs in order
