@@ -1,0 +1,49 @@
+<!-- This is the commenting format in HTML, comments are notes not included in final code -->
+<!DOCTYPE html> <!-- html = html5 "DOCTYPE declaration" tells web browser what version of html is being used in this web page, how browser parses info changes depending on html version -->
+<html lang="en"> <!-- Remember to save changes in code editor (file => save in code editor, then refresh browser page) before checking new code in web browser, otherwise no changes will be made, can drag and drop the tab from VSC to Chrome tab area to open page in Chrome-->
+        <head> <!-- head used to show other info about web page outside of the main body of the page that is useful for web browsers, like the title of the page-->
+            <title>Decendant</title> <!-- displays title in title bar of web page, in Chrome it's the words on the tab for the webpage-->
+            <style>
+            ul > li {
+                color: blue;
+            }
+            table, th, td {
+                border: 2px solid black;
+                border-collapse: collapse;
+                font-size: 50px;
+                margin: 20px;
+                padding: 20px;
+            }
+            div table {
+                color:crimson;
+            }
+            </style>
+            <!-- "a > b" = immediate decendant selector, selects a specific element nested within an element, element "b" is nested within element "a" (above: "ul > ui" only selects the "ui" elements within the "ul" unordered list) -->
+            <!-- "a b" = decendant selector, generally applies to all decendent ELEMENTS nested within an element-->
+            <!-- NOTE: The text "content inside the div nested within the unordered list that is NOT a decendant or an element" within <div> does not have element tags attached, so this line of text is NOT considered an element and is NOT a decendant/will NOT be colored crimson by above CSS decendant selector. -->
+        </head>
+        <body> <!-- body of page is the visible part of the page users can see -->
+            <ol>
+                <li>list item one</li>
+                <li>list item two</li>
+                <ul>
+                    <li>sublist item one</li>
+                    <li>sublist item two</li>
+                    <div>
+                        content inside the div nested within the unordered list that is NOT a decendant or an element
+                        <table>
+                            <tr>
+                                <th>nested table</th>
+                                <th>within div</th>
+                            </tr>
+                            <tr>
+                                <td>data 1</td>
+                                <td>data 2</td>
+                            </tr>
+                        </table>
+                    </div>
+                </ul>
+                <li>list item three</li>
+            </ol>
+        </body>
+</html>

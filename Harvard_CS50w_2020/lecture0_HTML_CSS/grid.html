@@ -1,0 +1,47 @@
+<!-- This is the commenting format in HTML, comments are notes not included in final code -->
+<!DOCTYPE html> <!-- html = html5 "DOCTYPE declaration" tells web browser what version of html is being used in this web page, how browser parses info changes depending on html version -->
+<html lang="en"> <!-- Remember to save changes in code editor (file => save in code editor, then refresh browser page) before checking new code in web browser, otherwise no changes will be made, can drag and drop the tab from VSC to Chrome tab area to open page in Chrome-->
+        <head> <!-- head used to show other info about web page outside of the main body of the page that is useful for web browsers, like the title of the page-->
+            <title>Grid</title> <!-- displays title in title bar of web page, in Chrome it's the words on the tab for the webpage-->
+            <style>
+                #grid {
+                    background-color: seagreen;
+                    display: grid;
+                    padding: 20px;
+                    grid-column-gap: 20px;
+                    grid-row-gap: 10px;
+                    grid-template-columns: 200px 200px auto;
+                }
+
+                .grid-item {
+                    background-color:burlywood;
+                    font-size: 20px;
+                    padding: 20px;
+                    text-align: center;
+                }
+            </style>
+            <!-- display: grid = indicates this uses the grid layout -->
+            <!-- grid-column-gap: 20px; = there will be 20px of space between each column -->
+            <!-- grid-row-gap: 20px; = there will be 20px of space between each row -->
+            <!-- grid-template-columns indicates how many columns there will be and how wide each will be -->
+            <!-- grid-template-columns: 200px 200px auto; = grid will have three columns 1st: 200px wide, 2nd: 200px wide, 3rd: auto(will automatically grow or shrink to fit the screen)-->
+            <!-- # indicates an id (ex: #grid) -->
+            <!-- . indicates a class (ex: .grid-item) -->
+        </head>
+        <body> <!-- body of page is the visible part of the page users can see -->
+            <div id="grid">
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+                <div class="grid-item">5</div>
+                <div class="grid-item">6</div>
+                <div class="grid-item">7</div>
+                <div class="grid-item">8</div>
+                <div class="grid-item">9</div>
+                <div class="grid-item">10</div>
+                <div class="grid-item">11</div>
+                <div class="grid-item">12</div>
+            </div>
+        </body>
+</html>

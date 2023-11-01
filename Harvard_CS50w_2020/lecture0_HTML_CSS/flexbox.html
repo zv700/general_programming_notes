@@ -1,0 +1,44 @@
+<!-- This is the commenting format in HTML, comments are notes not included in final code -->
+<!DOCTYPE html> <!-- html = html5 "DOCTYPE declaration" tells web browser what version of html is being used in this web page, how browser parses info changes depending on html version -->
+<html lang="en"> <!-- Remember to save changes in code editor (file => save in code editor, then refresh browser page) before checking new code in web browser, otherwise no changes will be made, can drag and drop the tab from VSC to Chrome tab area to open page in Chrome-->
+        <head> <!-- head used to show other info about web page outside of the main body of the page that is useful for web browsers, like the title of the page-->
+            <title>Flexbox</title> <!-- displays title in title bar of web page, in Chrome it's the words on the tab for the webpage-->
+            <style>
+                #container {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+
+                #container > div {
+                    background-color: chartreuse;
+                    font-size: 20px;
+                    margin: 20px;
+                    padding: 20px;
+                    width: 200px;
+                }
+            </style>
+            <!-- display: flex; = indicates this is a flexbox layout -->
+            <!-- flex-wrap: wrap; = says the flexbox will wrap the "container" id element if its width is too wide for the viewport/screen -->
+            <!-- #container = id "container", for the element with the id "container" wrap text using flexbox -->
+            <!-- #container > div = for any div inside of id "container", apply these CSS style properties -->
+            <!-- flexbox elements will adjust/adapt spacing to fit browser window width. if browser window is thinner, there will be less elements per row and the rest will move to aditional rows -->
+
+        </head>
+        <body> <!-- body of page is the visible part of the page users can see -->
+            <div id="container">
+                <div>1. This is some sample text inside of a div within a demo flexbox.</div>
+                <div>2. This is some sample text inside of a div within a demo flexbox.</div>
+                <div>3. This is some sample text inside of a div within a demo flexbox.</div>
+                <div>4. This is some sample text inside of a div within a demo flexbox.</div>
+                <div>5. This is some sample text inside of a div within a demo flexbox.</div>
+                <div>6. This is some sample text inside of a div within a demo flexbox.</div>
+                <div>7. This is some sample text inside of a div within a demo flexbox.</div>
+                <div>8. This is some sample text inside of a div within a demo flexbox.</div>
+                <div>9. This is some sample text inside of a div within a demo flexbox.</div>
+                <div>10. This is some sample text inside of a div within a demo flexbox.</div>
+                <div>11. This is some sample text inside of a div within a demo flexbox.</div>
+                <div>12. This is some sample text inside of a div within a demo flexbox.</div>
+
+            </div>
+        </body>
+</html>

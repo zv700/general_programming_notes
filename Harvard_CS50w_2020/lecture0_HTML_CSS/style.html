@@ -1,0 +1,33 @@
+<!-- This is the commenting format in HTML, comments are notes not included in final code -->
+<!DOCTYPE html> <!-- html = html5 "DOCTYPE declaration" tells web browser what version of html is being used in this web page, how browser parses info changes depending on html version -->
+<html lang="en"> <!-- Remember to save changes in code editor (file => save in code editor, then refresh browser page) before checking new code in web browser, otherwise no changes will be made, can drag and drop the tab from VSC to Chrome tab area to open page in Chrome-->
+        <head> <!-- head used to show other info about web page outside of the main body of the page that is useful for web browsers, like the title of the page-->
+            <title>Hello!</title> <!-- displays title in title bar of web page, in Chrome it's the words on the tab for the webpage-->
+            <style> 
+                h2 { 
+                    color: blue;
+                    text-align: center;
+                }
+                
+            </style>
+            <!-- CANNOT COMMENT OUT NOTES WITHIN style SECTION OF head -->
+            <!-- use style section of head to specify style of all of same element within the page, make changes to one setting vs. changing individual elements when using inline styling, ex. style=>h2{color: yellow;} says all h2 headings will be yellow -->
+            <!-- helps with readability, less long lines of text if elements do not have a long list of attributes -->
+            <!-- use sperate designated CSS style page to apply style to multiple web pages without having to copy paste CSS style between pages -->
+        </head>
+        <body style="color: darkred; text-align: right;"> <!-- if style attribute is applied to body, then all text within the body section will have that style UNLESS a nested element has its own style attribute -->
+            <h1 style="color: green; text-align: center;">Welcome to my web page!</h1> <!-- in CSS you can give individual elements CSS style properties like color or alignment, include "style" attribute => write desired CSS property followed by colon and space "color: " => value of property followed by semicolon "blue;", look up CSS options for reference -->
+            Hello, world! <!-- displays on actual webpage-->
+            <div> <!-- div = divider/skip to next line/same as hitting ENTER in a word processor. If you don't include div tags, all text will be on the same line. -->
+            This is more text. Text that is written in red may be difficult to read.
+            </div>
+            <!-- "inline styling" = placing style attributes within each individual element "in the same line" -->
+            <!-- keep in mind DESIGN, if you copy paste the same code in multiple places it might make it more time consuming to make changes because if you make changes to one, you have to make changes to the others to maintain consistency -->
+            <!-- Ex. If I have 10 headings and if all of my headings have the same copy pasted blue CSS style, to change all of my headings style to green, I would have to change each individual heading's style attribute to green. -->
+            <!-- avoid this by placing CSS into its own STYLE section of webpage code in HEAD, see above^^^ -->
+            <h2> Heading 2</h2>
+            <div>
+                
+            </div>
+        </body>
+</html>

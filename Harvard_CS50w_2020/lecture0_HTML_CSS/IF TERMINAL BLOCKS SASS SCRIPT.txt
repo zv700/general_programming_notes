@@ -1,0 +1,8 @@
+IF TERMINAL BLOCKS SASS SCRIPT ".ps1 is not digitally signed. You cannot run this script on the current system." 
+
+in terminal enter: "Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass" 
+
+
+This command sets the execution policy to bypass for only the current PowerShell session after the window is closed, the next PowerShell session will open running with the default execution policy.
+
+NEEDS TO BE RUN EVERY INDIVIDUAL TERMINAL SESSION FOR SAFETY REASONS/BECAUSE SECURITY REVERTS TO DEFAULT AFTER TERMINAL EXIT

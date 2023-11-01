@@ -1,0 +1,25 @@
+<!-- This is the commenting format in HTML, comments are notes not included in final code -->
+<!DOCTYPE html> <!-- html = html5 "DOCTYPE declaration" tells web browser what version of html is being used in this web page, how browser parses info changes depending on html version -->
+<html lang="en"> <!-- Remember to save changes in code editor (file => save in code editor, then refresh browser page) before checking new code in web browser, otherwise no changes will be made, can drag and drop the tab from VSC to Chrome tab area to open page in Chrome-->
+        <head> <!-- head used to show other info about web page outside of the main body of the page that is useful for web browsers, like the title of the page-->
+            <title>Hover</title> <!-- displays title in title bar of web page, in Chrome it's the words on the tab for the webpage-->
+            <style>
+                button {
+                    width: 200px;
+                    height: 50px;
+                    font-size: 24px;
+                    background-color: aquamarine;
+                }
+
+                button:hover {
+                    background-color: coral;
+                }
+            </style>
+            <!-- Above: CSS selector; button's background color is normally aquamarine color, but when you hover the mouse over the button, its color changes to coral -->
+            <!-- button:hover = (regarding the button)/(what happens when you interact with button in a specific way) -->
+            <!-- a:b = (select an element)/(when user interacts with this element in a specific way) -->
+        </head>
+        <body> <!-- body of page is the visible part of the page users can see -->
+           <button>Click me!</button>
+        </body>
+</html>

@@ -1,0 +1,37 @@
+<!-- This is the commenting format in HTML, comments are notes not included in final code -->
+<!DOCTYPE html> <!-- html = html5 "DOCTYPE declaration" tells web browser what version of html is being used in this web page, how browser parses info changes depending on html version -->
+<html lang="en"> <!-- Remember to save changes in code editor (file => save in code editor, then refresh browser page) before checking new code in web browser, otherwise no changes will be made, can drag and drop the tab from VSC to Chrome tab area to open page in Chrome-->
+        <head> <!-- head used to show other info about web page outside of the main body of the page that is useful for web browsers, like the title of the page-->
+            <title>Hello!</title> <!-- displays title in title bar of web page, in Chrome it's the words on the tab for the webpage-->
+            <link rel="stylesheet" href="variable.css" type="text/css">
+            
+            <!-- SASS = an extension to CSS, adds more features, like variables -->
+            <!-- see: "variable.scss"-->
+            <!-- SASS variables begin with $ (ex: $color: )-->
+            <!-- in SASS use variable name instead of normal value to apply that variable in multiple places (ex: color: $color;)-->
+            <!-- above in style where both ul and ol have a color value of blue. If you want them to both be the same color but want to change the color, you'd have to change two color values.-->
+            <!-- with SASS variable (in this case $color), you only have to change one variable and assign that one variable to both values that are currently assigned blue color (in varable.scss, blue color was changed to green)-->
+            <!-- browsers by default do not understand .scss files because it is an extension, the only understand .css -->
+            <!-- need to compile .scss => .css -->
+            <!-- in terminal: "sass variable.scss:variable.css"-->
+            <!-- variable.scss = file you want to compile, variable.css = file you want to generate -->
+            <!-- 1. write .scss file ||| 2. complie .scss file to generate .css file ||| 3. link generated .css file as stylesheet under head ||| 4. if any changes are made to .scss file then it needs to be recompiled for changes to be reflected in the generated .css file that needs to be linked to .html file -->
+            <!-- IF TERMINAL BLOCKS SASS SCRIPT ".ps1 is not digitally signed. You cannot run this script on the current system." in terminal enter: "Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass" This command sets the execution policy to bypass for only the current PowerShell session after the window is closed, the next PowerShell session will open running with the default execution policy.-->
+            <!-- set SASS to automatically recompile changes to .scss file. in terminal: "sass --watch variable.scss:variable.css"-->
+            <!-- use SASS if you need to make changes to a large number of elements simultaneously, reducing the number of things needed to be edited in CSS -->
+            <!-- SASS lets you nest CSS selectors inside of other CSS selectors -->
+        </head>
+        <body> <!-- body of page is the visible part of the page users can see -->
+            Hello, world! <!-- displays on actual webpage-->
+            <ul>
+                <li>unordered item</li>
+                <li>unordered item</li>
+                <li>unordered item</li>
+            </ul>
+            <ol>
+                <li>ordered item</li>
+                <li>ordered item</li>
+                <li>ordered item</li>
+            </ol>
+        </body>
+</html>

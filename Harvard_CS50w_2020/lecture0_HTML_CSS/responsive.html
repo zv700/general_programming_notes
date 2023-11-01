@@ -1,0 +1,33 @@
+<!-- This is the commenting format in HTML, comments are notes not included in final code -->
+<!DOCTYPE html> <!-- html = html5 "DOCTYPE declaration" tells web browser what version of html is being used in this web page, how browser parses info changes depending on html version -->
+<html lang="en"> <!-- Remember to save changes in code editor (file => save in code editor, then refresh browser page) before checking new code in web browser, otherwise no changes will be made, can drag and drop the tab from VSC to Chrome tab area to open page in Chrome-->
+        <head> <!-- head used to show other info about web page outside of the main body of the page that is useful for web browsers, like the title of the page-->
+            <title>Hello!</title> <!-- displays title in title bar of web page, in Chrome it's the words on the tab for the webpage-->
+            <style>
+                @media (min-width: 600px) {
+                    body {
+                        background-color:coral;
+                    }
+                }
+
+                @media (max-width: 599px) {
+                    body {
+                        background-color:lightblue;
+                    }
+                }
+            </style>
+            <!-- @media = media query, starts with @ symbol followed by parentheses, specify what type of media the quiry will apply to -->
+            <!-- Above: if the minimum width of the viewport is 600px (as in 600px or more), then change the background color of the body to coral -->
+            <!-- Above: if the maximum width of the viewport is 599px (as in 599px or less), then change the background color of the body to lightblue -->
+            <!-- Above: color change logic is automatic. if you're using a desktop monitor andt the browser is maximized (i.e. the viewport is more than 600px) it will be one color and if you shrink the size of the browser on screen to be 599px or less, it will change color. Does not have to specifically be on a smaller screen to work -->
+            <!-- can control if an element is visible/hide an element with the "display" property -->
+            <!-- -->
+        </head>
+        
+        <body> <!-- body of page is the visible part of the page users can see -->
+            <h1>Welcome to My Web Page!</h1>
+            Media query
+            <div>When the width of the viewport is 600px or more, the background color will be coral.</div>
+            <div>When the width of the viewport is 599px or less, the background color will be lightblue.</div>
+        </body>
+</html>

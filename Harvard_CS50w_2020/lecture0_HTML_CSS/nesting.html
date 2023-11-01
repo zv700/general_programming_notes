@@ -1,0 +1,38 @@
+<!-- This is the commenting format in HTML, comments are notes not included in final code -->
+<!DOCTYPE html> <!-- html = html5 "DOCTYPE declaration" tells web browser what version of html is being used in this web page, how browser parses info changes depending on html version -->
+<html lang="en"> <!-- Remember to save changes in code editor (file => save in code editor, then refresh browser page) before checking new code in web browser, otherwise no changes will be made, can drag and drop the tab from VSC to Chrome tab area to open page in Chrome-->
+        <head> <!-- head used to show other info about web page outside of the main body of the page that is useful for web browsers, like the title of the page-->
+            <title>Hello!</title> <!-- displays title in title bar of web page, in Chrome it's the words on the tab for the webpage-->
+            <link rel="stylesheet" href="nesting.css">
+        </head>
+        <body> <!-- body of page is the visible part of the page users can see -->
+            Hello, world! <!-- displays on actual webpage-->
+
+<!-- SEE: nesting.scss -->
+<!-- SASS allows you to nest CSS selectors inside of other CSS selectors, normally you CANNOT do that with basic CSS -->
+<!-- in nesting.scss example:  div { p {} ul {} }-->
+<!-- when SASS compiles .scss => .css, will convert format to CSS decendant/ancestor format, .scss nesting format may be easier to read than CSS decendant format -->
+<!-- in nesting.scss example: only the paragraph and ul within the div will change color -->
+
+            <div>
+                <p>This is a parabraph inside the div.</p>
+
+                List inside the div:
+                <ul>
+                    <li>item 1</li>
+                    <li>item 2</li>
+                    <li>item 3</li>
+                </ul>
+            </div>
+
+            <p>This is a paragraph outside the div.</p>
+
+            List outside of the div:
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+            </ul>
+
+        </body>
+</html>

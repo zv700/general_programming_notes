@@ -1,0 +1,50 @@
+<!-- This is the commenting format in HTML, comments are notes not included in final code -->
+<!-- Table hierarchy of nested tags highest to lowest: table => thead/tbody => tr(table row) => th(table heading)/td(table data) -->
+<!DOCTYPE html> <!-- html = html5 "DOCTYPE declaration" tells web browser what version of html is being used in this web page, how browser parses info changes depending on html version -->
+<html lang="en"> <!-- Remember to save changes in code editor (file => save in code editor, then refresh browser page) before checking new code in web browser, otherwise no changes will be made, can drag and drop the tab from VSC to Chrome tab area to open page in Chrome-->
+        <head> <!-- head used to show other info about web page outside of the main body of the page that is useful for web browsers, like the title of the page-->
+            <title>Table</title> <!-- displays title in title bar of web page, in Chrome it's the words on the tab for the webpage-->
+            <style>
+                table {
+                    border: 5px solid black;
+                    font-size: 50px;
+                    border-collapse: collapse;
+                    margin: 15px;
+                }
+
+                td, th {
+                    border: 2px solid rgb(31, 95, 197);
+                    padding: 15px;
+                }
+            </style>
+            <!-- CSS selector = ways of choosing elements -->
+            <!-- CSS multiple data selector = apply CSS style to more than one element type, each type is seperated by a comma ( width, height {} ) -->
+            <!-- border-collapse: collapse; = remove additional borders inside of table, many tables on internet do not have inner borders/doubled borders from outer table and inner cells, looks cleaner -->
+
+
+        </head>
+        <body> <!-- body of page is the visible part of the page users can see -->
+            <!-- each table is composed of multiple parts, each table is a group of table rows, each table row is a sequence of individual cells of data-->
+            <table>
+                <thead> <!-- thead = "head" section of table, similar to "head" section of the entire html page structure-->
+                    <tr> <!-- tr = table row, table rows display each individual nested element from left to right horizontally, even though they are written vertically (up and down) in code -->
+                        <th>Ocean</th> <!-- th = heading of table, could be what data in each column of the table means/represents-->
+                        <th>Average Depth</th> <!-- each table heading is the title of its own column -->
+                        <th>Maximum Depth</th> <!-- table headings are in bold automatically -->
+                    </tr>
+                </thead>
+                <tbody> <!-- tbody = "body" of table, like "body" of HTML structure, tbody consists of individual rows-->
+                    <tr> <!-- tr = table row-->
+                        <td>Pacific Ocean</td> <!-- td = table data, each td is one cell of data in the table -->
+                        <td>4,280 m</td> <!-- second column in tbody corresponds to second table heading "Average Depth"-->
+                        <td>10,911 m</td> <!-- third column in tbody corresponds to third table heading "Maximum Depth"-->
+                    </tr>
+                    <tr>
+                        <td>Atlantic Ocean</td>
+                        <td>3,646 m</td>
+                        <td>8,486 m</td>
+                    </tr>
+                </tbody>
+            </table>
+        </body>
+</html>
