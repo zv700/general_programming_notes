@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hello</title>
+        <script>
+            function hello() {
+                if (document.querySelector('h1').innerHTML === 'Hello!') { 
+                    document.querySelector('h1').innerHTML = 'Goodbye!';
+            } else {
+                    document.querySelector('h1').innerHTML = 'Hello!'
+                    // if the selected h1 html element is the exact string 'Hello!' then change it to the string 'Goodbye!' ---> === strict equality, both compared values must have the same type ---> both are strings
+                    // else/otherwise if the selected h1 html element is equal to any other value, change that value to 'Hello!'
+                    // if/else statement allows you to toggle between the h1 heading saying 'Hello!' and 'Goodbye!'
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <h1>Hello!</h1>
+        <button onclick="hello()">Click Here</button>
+
+        <h1>Second h1 element that querySelector won't select because it only selects the first instance of the specified element</h1>
+    </body>
+</html>

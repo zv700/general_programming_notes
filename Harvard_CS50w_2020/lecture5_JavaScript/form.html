@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hello</title>
+        <script>
+           document.addEventListener("DOMContentLoaded", function() {
+            
+            //document.querySelector('form').onsubmit = f; // run fucntion "f" when the form is submitted -> if you've already written function f() prior to calling
+            document.querySelector('form').onsubmit = function() {
+                //document.querySelector('input') //would work this time because even though there are multiple inputs, the one we want, the text input field will be loaded before the submit input field --> not ideal though, may not always work out that way
+                const name = document.querySelector('#name').value; // sets the value of variable "name" to the .value of whatever the user enters and submits into the '#name' id'd text input field. use const because within this function, the variable: name will not change
+                alert(`Hello, ${name}!`); //places the value of variable name into template literal
+            };
+        });
+        </script>
+    </head>
+    <body>
+        <h1>Hello!</h1>
+        <input autofocus id="name" placeholder="Name" type="text">
+        <input type="submit">
+    </body>
+</html>

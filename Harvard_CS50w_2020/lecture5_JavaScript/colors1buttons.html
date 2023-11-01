@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Color</title>
+       <script>
+        document.addEventListener("DOMContentLoaded", function() {  //layer1 run a function after the page's DOM is fully loaded
+            
+            document.querySelectorAll('button').forEach(function(button) {  //layer2 "run a query that selects all buttons on the page"
+                button.onclick = function() {   //layer3 "function: for each button selected/stored in the array, run a function" --> loop through the array and run the function once on each array element
+                    document.querySelector('#hello').style.color = button.dataset.color; //layer4 "function: select the element with the #hello id and change its CSS style: color to the color stored within the clicked button's dataset (data-color)"
+                }
+            })
+        });
+       </script>
+    </head>
+    <body>
+        <h1 id="hello">Hello!</h1>
+        <button data-color="red">Red</button>
+        <button data-color="green">Green</button>
+        <button data-color="blue">Blue</button>
+    </body>
+</html>

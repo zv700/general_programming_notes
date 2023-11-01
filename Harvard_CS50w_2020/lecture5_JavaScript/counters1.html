@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Counter</title>
+        <script>
+            
+            let counter = 0;
+
+            function count() {
+                // counter = counter + 1;       // lines that begin with // are commented out in JavaScript
+                // counter += 1;
+                counter++;
+                document.querySelector('h1').innerHTML = 'Current count: '+counter;
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>Hello! The count starts at: 0</h1>
+        <button onclick="count()">Count</button>
+    </body>
+</html>

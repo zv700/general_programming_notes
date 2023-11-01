@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tasks</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                
+                // By default, submit button is disabled
+                document.querySelector('#submit').disabled = true;
+
+                // submit button is enabled after user presses and lets go of a key
+                document.querySelector('#task').onkeyup = () => {
+                    if (document.querySelector('#task').value.length > 0) { // if the length[value] of what the user types is greater than > zero 0, then give them access to the submit button
+                    document.querySelector('#submit').disabled = false;
+                } else {
+                    document.querySelector('#submit').disabled = true; // if length of user input is not greater than 0 then disable submit button
+                }
+            }
+                
+                document.querySelector('form').onsubmit = () => {
+                    const task = document.querySelector('#task').value; // 'task' is the input field, .value is what the user types into the input field
+                    // console.log(task); // value of task/user input will be printed to the JavaScript console
+                    // by default forms try to submit a request/load a new page when you hit submit, prevent by adding return False; at the end of code
+
+                    const li = document.createElement('li'); // creates a new element, but new element needs a place to go. see append below
+                        li.innerHTML = task;
+
+                    document.querySelector('#tasks').append(li); //selects element with id #tasks = unordered list, adds/appends the new created element: li [list item] to the ul [unordered list]
+
+                    document.querySelector('#task').value = ''; // clears the value of the #task input field after appending the new list item --> after user hits submit, the input field is now empty again
+                    
+                    //after submitting, submit button becomes inactive
+                    document.querySelector('#submit').disabled = true;
+
+                    // Stop form from submitting --> we want everything to work clientside/within the browser -> no server usage
+                    return false;
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Tasks</h1>
+
+        <ul id="tasks">
+
+        </ul>
+        <form>
+            <input id="task" placeholder="New Task" type="text">
+            <input id="submit" type="submit">
+        </form>
+    </body>
+</html>

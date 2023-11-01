@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Currency Exchange</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+
+                // what the form does: converts USD to specified currency. text input field where user inputs three letter code for specific currency (ex. JPY, GBP, EUR) and submits with submit button, displays conversion in a string below input field "1 USD is equal to 109.852 JPY." -> exchange rates are pulled from web api in real time
+                document.querySelector('form').onsubmit = function() {
+                    fetch('https://api.exchangeratesapi.io/latest?base=USD&access_key=ACCESS_KEY') // 1. Fetch currency exchange rate data from web api  // need to sign up for fixer exchange rate api
+                    .then(response => response.json())  // 2. convert fetched data to json file/format
+                    .then(data => {                      // 3. access data
+                        const currency = document.querySelector('#currency').value.toUpperCase(); //see what user typed into input field -> which currency are they trying to convert?
+                        const rate = data.rates[currency]; // accesses user's selected currency stored within currency variable (can be any currency, not just EUR like below) -> square brackets [currencyVariable] access a variable, accessing dot .currencyVariable will access a property of rates called "currencyVariable"
+                        
+                        if (rate !== undefined) { //"if the rate is NOT undefined" ! = NOT
+                            const result = `1 USD is equal to ${rate.toFixed(3)} ${currency}`;
+                                //const rate = data.rates.EUR;    // contruct varible: rate, set data formatting -> access rate KEY and EUR VALUE withing json Data -> only useful if making an exchange rate applictaion that only converts from USD to EUR
+                                //document.querySelector('body').innerHTML = `1 USD is equal to ${rate.toFixed(3)} ${currency}.`; //.toFixed(3) -> for long decimals, limits/rounds to 3 decimal places
+                                //return response.json()
+                            document.querySelector('#result').innerHTML = result;
+                        } else {
+                            document.querySelector('#result').innerHTML = 'Invalid currency.';
+                        }
+                    })
+                    .catch(error => {
+                        console.log('Error:', error);
+                    });
+
+                    return false; // -> prevents submitting the form to another page, only want to run JS locally on this one page in this example
+                }
+
+       
+                // 1. fetch/send a request to recieve a promise, 2. after the promise is recieved then 3. return the response as json data
+                
+            });
+        </script>
+    </head>
+    <body>
+        <form>
+            <input id="currency" placeholder="Currency" type="text">
+            <input type="submit" value="Convert">
+        </form>
+        <div id="result">
+        </div>
+
+    </body>
+</html>
