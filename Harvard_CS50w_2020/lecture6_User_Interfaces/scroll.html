@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Scroll</title>
+        <script>
+
+            //goal: detect when the user has scrolled all the way to the bottom of the page
+            //logic: IF window.innerHeight[height of the window/amount of page visible to user at any given time] + window.scrollY[amount in pixels that the user has scrolled down the page, down the y-axis or height] is >= greaterthan or equal to document.body.offsetHeight[the total height of the page in pixels or the length of the y-axis of the page], 
+                //THEN the user has scrolled all the way to the bottom of the page.
+            // page background will be white if not at bottom
+            // page background will be green if user reaches bottom of page
+            window.onscroll = () => {
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                    document.querySelector('body').style.background = 'green';
+                } else {
+                    document.querySelector('body').style.background = 'white';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+        <p>6</p>
+        <p>7</p>
+        <p>8</p>
+        <p>9</p>
+        <p>10</p>
+        <p>11</p>
+        <p>12</p>
+        <p>13</p>
+        <p>14</p>
+        <p>15</p>
+        <p>16</p>
+        <p>17</p>
+        <p>18</p>
+        <p>19</p>
+        <p>20</p>
+    </body>
+</html>

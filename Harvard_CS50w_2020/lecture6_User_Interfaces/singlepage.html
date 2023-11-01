@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Single page application</title>
+        <!-- single page web app uses only one page and switches out the content displayed on that one page via JavaScript -->
+            <!-- "simulate the idea of having multiple pages within a single page" -->
+            <!-- page content is handled locally within JavaScript code, single page web app does not need to make a request to the server every time a new page's content needs to be loaded -->
+
+        <style>
+            div {
+                display: none; 
+            }
+        </style>
+        <!-- div {display:none;} makes it so divs are not visible on screen --> 
+        <script>
+            
+            // showPage() sets one of the pages to be visible using button presses
+                    // div = element, style = property, display = attribute
+                // div.style.display = 'none' -> page within div is not visible
+                // div.style.display = 'block' -> page within div IS visible
+                // to only display one page at a time, you must first set the current displayed page to 'none': not visible -> prevents displaying more than one page (the current page and the next page from the next button press)
+            function showPage(page) {
+                document.querySelectorAll('div').forEach(div => {
+                    div.style.display = 'none';
+                })
+                document.querySelector(`#${page}`).style.display = 'block'; // 'block' = visible, changes the display attribute so the page value(corresponding to pages in body section) are now blocks on the page[like blocks of text, section of the page]
+            }
+
+            // Get the buttons to work [attach event handlers to the buttons] -> buttons will run showPage() function when pressed
+            // add an event listener after the content of the page [including the buttons] is/are fully loaded
+                // for each button that is clicked, run the showPage() function
+                // this -> "this button" = the button that recieved the event "the button that was clicked" -> displays page that corresponds to that specific button [within the dataset.page attribute within the button's data-page attribute]
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('button').forEach(button => {
+                    button.onclick = function() {
+                        showPage(this.dataset.page);
+                    }
+                })
+            })
+            
+        </script>
+    </head>
+    <body>
+        <!-- each div is content for one page -->
+        <!-- use the respective buttons to toggle between each of the pages -->
+        <!-- use data-page attribute to connect each button to the id that corresponds to each individual page via JavaScript -> requires JavaScript code in script section or JS file to work, adds info to a particular element -->
+        <button data-page="page1">Page 1</button>   <!-- notice that "page1" is a string, needs to be a string when being passed through showPage JavaScript function -> showPage("page1"); -->
+        <button data-page="page2">Page 2</button>
+        <button data-page="page3">Page 3</button>
+
+        <div id="page1">
+            <h1>This is page 1.</h1>
+        </div>
+        
+        <div id="page2">
+            <h1>This is page 2.</h1>
+        </div>
+        
+        <div id="page3">
+            <h1>This is page 3.</h1>
+        </div>
+    </body>
+</html>

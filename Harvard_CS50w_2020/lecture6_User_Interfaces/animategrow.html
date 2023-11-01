@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>animate</title>
+        <!-- CSS style notes -->
+        <!-- @keyframes name must match with animation-name within specified element -->
+
+        <style>
+            
+            @keyframes grow {
+                from {
+                    font-size: 20px; 
+                }
+                to {
+                    font-size: 100px;
+                }
+            }
+            
+
+            h1 {
+                position: relative;
+                animation-name: grow;
+                animation-duration: 2s;
+                animation-fill-mode: forwards;
+
+            }
+
+        
+        </style>
+    </head>
+    <body>
+        <h1>Welcome!</h1>
+        <h2>h2 heading</h2>
+    </body>
+</html>

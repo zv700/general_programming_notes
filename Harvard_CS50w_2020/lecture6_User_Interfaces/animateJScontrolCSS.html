@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>animate</title>
+        <!-- CSS style notes -->
+        <!-- @keyframes name must match with animation-name within specified element -->
+
+        <style>
+            
+            
+            @keyframes move {
+                0% {
+                    left: 0%;
+                }
+                50% {
+                    left: 50%;
+                }
+                100% {
+                    left: 0%;
+                }
+            }
+
+            h1 {
+                position: relative;
+                animation-name: move;
+                animation-duration: 4s;
+                animation-fill-mode: forwards;
+                animation-iteration-count: infinite;
+
+            }
+        </style>
+        <script>
+            // query select h1 elements on page -> store in h1 variable
+            // use h1 variable to change animation's state to paused
+            // query select button element 
+            // on click -> run the animation if it is paused
+            // on click -> pause the animation if it is running
+            document.addEventListener('DOMContentLoaded', () => {
+
+                const h1 = document.querySelector('h1');
+
+                // animation starts paused when page loads
+                h1.style.animationPlayState = 'paused';
+
+                // toggle animation on or off
+                document.querySelector('button').onclick = () => {
+                    if (h1.style.animationPlayState === 'paused') 
+                        h1.style.animationPlayState = 'running';
+                    else 
+                        h1.style.animationPlayState = 'paused';
+                    
+                };
+            });
+        </script>
+    </head>
+    <body>
+        <button>Click Here</button>
+        <h1>Welcome!</h1>
+        <h2>h2 heading</h2>
+    </body>
+</html>

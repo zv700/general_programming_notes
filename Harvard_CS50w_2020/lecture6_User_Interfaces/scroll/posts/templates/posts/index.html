@@ -1,0 +1,90 @@
+<!-- {% extends "posts/layout.html" %} -->
+
+<!DOCTYPE html>
+    <html>
+        <head>
+            <script>
+        // Dynamically load new posts
+
+                // Start with first post
+                    // counter variable keeps track of what post to load next
+                let counter = 1;
+
+                // Load posts 20 at a time
+                    // quantity variable says how many post to load at a time
+                const quantity = 20;
+
+                // When DOM loads, render the first 20 posts
+                    // when DOM content is loaded, call the function load() from below
+                document.addEventListener('DOMContentLoaded', load);
+
+                // IF I scroll to the bottom of the page, THEN call the load(); function
+                window.onscroll = () => {
+                    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                        load();
+                    }
+                }
+
+                // the 'event' itself is a JavaScript object that contains info about the event itself [a scroll event, a keydown event, a click event, etc.]
+                // event.target = what was the target of the event "what was the thing that was clicked on?"
+                    // save the event's target inside of variable: element
+                // "is the element/event's target one of the 'hide' buttons?"
+                    // could alternatively attach event listenter to each 'hide' button
+                document.addEventListener('click', event => {
+                    const element = event.target;
+                    // confirm with if statement: 'yes this is a hide button'
+                    //element.remove() -> get rid of that element, but not everything inside of the element
+                    //element.parentElement.remove()
+                    if (element.className === 'hide') {
+                        element.parentElement.remove()    
+
+                    }
+
+                });
+                // Load next set of posts
+                    // load() function 
+                        // 1. checks for start and end post
+                        // 2. fetches new posts/asynchronously asking for new posts
+                    // add_post() function
+                        // 1. creates a new <div>
+                        // 2. populates <div> with content from fetched new posts
+                        // 3. adds <div> with post content to DOM
+                function load() {
+
+                    // Set start and end post numbers, and update counter
+                    const start = counter;
+                    const end = start + quantity - 1;
+                    counter = end + 1;
+
+                    // Get new posts and add posts
+                    fetch(`/posts?start=${start}&end=${end}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        data.posts.forEach(add_post);
+                    })
+
+                };
+
+                // Add a new post with given contents to DOM
+                function add_post(contents) {
+                    
+                    // Create new post
+                    const post = document.createElement('div');
+                    post.className = 'post';
+                    post.innerHTML = `${contents} <button class="hide">Hide</button>`;
+
+                    // Add post to DOM
+                    document.querySelector('#posts').append(post);
+                };
+
+            </script>
+        </head>
+        <body>
+        <!-- {% block body %}
+            <h1>Posts</h1>
+            
+        {% endblock %} -->
+        <h1>Posts</h1>
+        <div id="posts"></div>
+        </body>
+    </html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <Title>Single page app</Title>
+        <style>
+
+        </style>
+        <script>
+
+            //.onpopstate "when I pop something off in the history" = "when I go back in the history"
+            // event -> what state was stored within the user's history
+            window.onpopstate = function(event) {
+                console.log(event.state.section);
+                showSection(event.state.section);
+            }
+
+            // showSection() function -> 1. reach out to server, 2. figures out what text content belongs in the new section, 3. fill in section of page with the text that comes back from HttpRequest
+                // 1. showSection() fetches content sections(1, 2, 3) that should be displayed on the page
+                    //fetch contacts the server -> browser recieves response from server
+                // 2. first .then -> converts response to plain text [also possible to convert to JSON data]
+                // 3. second .then -> log text in dev console, query/search the page for anything with the #content id and write it to .innerHTML content as plain text
+                    // section variable corresponds to "data-section" attribute of <button> in <body>
+            // "using asynchronous JavaScript to load content only when you need it"
+            // "when you click on a section button, then the page will make a request to the server for the content associated with that button/section, then it fills in content on that page" 
+                // when you click on button, in commandline there is a GET request corresponding to each section button click/press
+                // any info that does not need to change [buttons, title, headings, other template features/elements] do not need to be reloaded, only page text content is requested for and changed/only sections that need to change are changed
+                
+            function showSection(section) {
+
+                fetch(`/sections/${section}`)
+                .then(response => response.text())
+                .then(text => {
+                    console.log(text);
+                    document.querySelector('#content').innerHTML = text;
+                });
+            }
+
+            // event listener checks for page content/DOM content is loaded
+            // queryselectorall checks for any <buttons> on page
+                // when button is clicked, run showSection() function to change page content to selected button's section
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('button').forEach(button => {
+                    button.onclick = function() {
+//difference from singlepageapp1 -> add history push -> history.pushState adds new element to browsing history -> saves data locally to users' browsers' browsing history
+                        // ({javaScriptObjectKEY: javaScriptObjectVALUE, "TitleParameterThatMostWebBrowsersIgnoreSoCanJustBeAnEmptyString", `urlEndingThatAppearsInAddressBar` })
+                    // below makes url in address bar -> example.com/singlepageapp2/section1 when clicking on section 1 button, /secton2 when clicking on section 2 button, etc.
+                        const section = this.dataset.section;
+                        history.pushState({section: section}, "", `section${section}`);
+                        showSection(this.dataset.section);
+                    };
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Hello!</h1>
+        
+        <button data-section="1">Section 1</button>
+        <button data-section="2">Section 2</button>
+        <button data-section="3">Section 3</button>
+        
+        <div id="content">
+        </div>
+    </body>
+</html>

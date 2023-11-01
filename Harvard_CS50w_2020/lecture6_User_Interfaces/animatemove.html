@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>animate</title>
+        <!-- CSS style notes -->
+        <!-- @keyframes name must match with animation-name within specified element -->
+
+        <style>
+            
+            
+            @keyframes move {
+                0% {
+                    left: 0%;
+                }
+                50% {
+                    left: 50%;
+                }
+                100% {
+                    left: 0%;
+                }
+            }
+
+            h1 {
+                position: relative;
+                animation-name: move;
+                animation-duration: 4s;
+                animation-fill-mode: forwards;
+                animation-iteration-count: 2;
+
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Welcome!</h1>
+        <h2>h2 heading</h2>
+    </body>
+</html>
