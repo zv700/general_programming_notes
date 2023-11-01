@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hello!</title>
+    </head>
+    <body>
+        <h1>Hello, {{ name }}!</h1>
+        <!-- double curly braces {{ doubleCurlyBraces }} are part of Django templating language that lets you plug in the value of a variable (from the Python dictionary within views.py for this specific view: greet()) within this position inside of this .html template -->
+        <!-- a variable goes inside of double curly braces: {{ yourVariableHere }} -->
+        <!-- in this example, the value for the "name" variable comes from the url ending: examplesite.com/exampleApp1/name -->
+        <p>
+            This is this site's greeting page. Enjoy your stay!
+        </p>
+
+        <p>
+            I'm gonna get some drinks from the fridge. I can grab you a soda, if you want one.
+        </p>
+
+        <p>
+            Leave your shoes by the door. The bathroom's around the corner on the right.
+        </p>
+    </body>
+</html>

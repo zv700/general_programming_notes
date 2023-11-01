@@ -1,0 +1,35 @@
+{% extends "tasks/layout.html" %}
+
+    {% block body%}
+        <h1>Add a new task to the list</h1>
+        <form action="{% url 'tasks:add' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <!-- <input type="text" name="task"> -->
+            <!-- LINE 7 replaces LINE 8, while working together with imported forms LINE1/class LINE6 and LINE 23 within views.py -->
+            <input type="submit">
+        </form>
+        <!-- <a href="{% url 'index' %}">View tasks list</a> -->
+        <a href="{% url 'tasks:index' %}">View tasks list</a>
+    {% endblock %}
+ 
+    <!-- namespace collision = Django site tries to load a page with a particular name, but there are multiple files in the Project with the same name "index.html" -->
+        <!-- note: above in LINE 9 correctly links to the correct index.html in the same folder, whereas in the Harvard CS50 course video originally from 2020, Django linked instructor to the wrong index.html in a different app/newyear app. Maybe fixed behavior in Django updates (2023 as of writing)? -->
+        <!-- instructor's solution was to add value app_name = "tasks" to urls.py within tasks folder tasks/urls.py one line above urlpatterns = []. I added it to LINE 5 of tasks/urls.py, just in case. -->
+        <!-- LINE 15: allows you to write 'tasks:index' as the href link's url parameter in LINE 10 of this page, and 'tasks:add' in href of tasks/index.html LINE 20 -->
+    
+    <!-- LINE 5: form ACTION -->
+        <!-- action attribute of form tells the form to perform a specific behavior when the form is submitted -->
+        <!-- in this case, action sends the user's response to the form to the url tasks:add-->
+        <!-- the method addribute "post" will-->
+        <!-- post = a request method for data that has the ability to change the state/content of a page (like posting a comment to a forum/comments section of a blog), SEND DATA, posts are usually for submitting form data, does not include parameters inside of the url like a get request would -->
+        <!-- get = request method for acquiring a page/rendering a specific page when a user clicks on a link, types in a url into an address bar and submits "I would like to get a particular page"-->
+
+    <!-- CSRF = cross site request forgery = a security vulnerability/potential for cyberattack in some forms that is present if they are not designed in a secure way. -->
+        <!-- "Someone could forge a request to a particular website using a form on their own seperate website. Someone on a different website could trick a user there to submit data through their form that then adds that data to our task list. " -->
+        <!-- example: phishing for data, someone could use CSRF within a bank's site and trick a user into submitting personal information to the scammer's outside site -->
+        <!-- prevent this by adding a hidden CSRF token = a unique token that is generated every time a user visits this particular form. When a user submits the form, they also submit the unique token with the form. The web application checks if the token is valid. If it is valid, then it will allow the form to submit. -->
+        <!-- because generated CSRF tokens are unique, adversary trying to exploit a vulnerability in your website won't be able to forge a submit request, their CSRF token validation check would fail -->
+    <!-- Django has CSRF validation turned on by default using Django middleware -->
+        <!-- middleware = because Django is the "middleman" between the site and user, it can intervene within the request/response process (list of middleware within Django project's settings.py)-->
+    <!-- add CSRF_token validation in line below form action (in this case LINE 6 of this page)-->

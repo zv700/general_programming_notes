@@ -1,0 +1,35 @@
+{% extends "tasks/layout.html" %}
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tasks</title>
+    </head>
+    <body> -->
+
+    {% block body%}
+        <ul>
+            <h1>Example list of tasks using for loop logic</h1>
+            {% for task in tasks %}
+                <li>{{ task }}</li>
+            {% empty %}
+                <li>No tasks</li>
+                
+            {% endfor %}
+            <!-- for loop logic: for task in tasks = "for each individual task within the task list, write each task within its own new list item with each loop replacing list item's task variable" -->
+                <!-- the name of the variable/list is plural: "tasks", variable: "tasks" was defined within tasks/views.py -->
+                <!-- each individual item is given singular variable/name "task", variable: "task" was defined on this .html page in for loop step -->
+                <!-- for loop will loop through the list of tasks in variable: tasks located within tasks/views.py from left to right, writing each task as a new list item with each loop iteration until it reaches the final/rightmost list item -->
+                <!-- inside of Django for loop, you can include an % empty % condition that will only display if no loops were run "if we're iterating over a list in Django, but there is nothing in the list"-->
+        </ul>
+        <a href="{% url 'tasks:add' %}">Add a new task</a>
+    {% endblock %}
+
+    <!-- </body>
+</html> -->
+
+<!-- commented out sections of boilerplate html structure are not needed because this page inherits structure from layout.html, left in place for explanation purposes -->
+<!-- add.html will also inherit structure from layout.html, but will not include unecessary html code for comparison-->
+<!-- for more complex/larger projects/websites, it's better to be able to have one template that you can make changes to that will apply to every html page that inherits from it, rather than having to change every individual .html page within a site with hundreds of pages -->
+
+<!-- LINE 20: href links to url 'add' tells Django to search for a path (from urls.py) with the NAME='add' -->
+        <!-- the link to url 'pathName' will change dynamically -->
