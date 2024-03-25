@@ -8,6 +8,21 @@ https://cs50.harvard.edu/x/2023/
 Harvard other free courses
 https://www.edx.org/school/harvardx
 
+Search for "OpenCourseWare" -> OpenCourseWare = free college/university level courses
+
+MIT OpenCourseWare - contains free MIT courses for programming and all other subjects, free textbooks, teaching materials, some courses have video lessons, etc. 
+- cannot complete for college credit 
+https://ocw.mit.edu/
+
+C++ Reference
+https://en.cppreference.com/w/
+
+Learn C++ - tutorials
+https://www.learncpp.com/
+
+FreeCodeCamp - has free courses for various programming languages with certs, they periodically send out other free learning resources via email newsletters
+https://www.freecodecamp.org/learn/
+
 Univ of Helsinki Python overview course
 https://programming-23.mooc.fi/
 
@@ -22,16 +37,3 @@ https://www.reddit.com/r/learnprogramming/comments/107n81d/up_to_date_list_of_he
 
 MOOC = Massive OPEN Online Course, free to enroll 
 https://www.mooc.org/
-
-C++ Reference
-https://en.cppreference.com/w/
-
-Learn C++ - tutorials
-https://www.learncpp.com/
-
-Search for "OpenCourseWare" -> OpenCourseWare = free college/university level courses
-
-FreeCodeCamp - has free courses for various programming languages with certs, they periodically send out other free learning resources via email newsletters
-https://www.freecodecamp.org/learn/
-
-
