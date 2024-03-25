@@ -10,8 +10,7 @@ https://www.edx.org/school/harvardx
 
 Search for "OpenCourseWare" -> OpenCourseWare = free college/university level courses
 
-MIT OpenCourseWare - contains free MIT courses for programming and all other subjects, free textbooks, teaching materials, some courses have video lessons, etc. 
-- cannot complete for college credit 
+MIT OpenCourseWare - contains free MIT courses for programming and all other subjects, free textbooks, teaching materials, some courses have video lessons, etc. - cannot complete for college credit 
 https://ocw.mit.edu/
 
 C++ Reference
