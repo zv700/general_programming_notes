@@ -1,0 +1,7 @@
+https://www.youtube.com/watch?v=WViyCAa6yLI
+Creating 2d platformer - Clear code
+
+I skipped the intro and was not aware tutorial requires external program
+-directory issues probably because requires use of Tiled map editor external program
+
+may revisit in future
